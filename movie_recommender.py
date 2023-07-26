@@ -55,6 +55,7 @@ movies = data['title'].tolist()
 
 # html html_getter
 def img_getter(url:str):
+    scr = 'https://illustoon.com/photo/7627.png'
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0'}
     response = get(url, headers=headers)
     tv_soup = BeautifulSoup(response.text, 'html5lib')
@@ -65,16 +66,16 @@ def img_getter(url:str):
         if image_tag:
             image_source = image_tag['src']
             return image_source
-        else:
-            scr = 'https://illustoon.com/photo/7627.png'
-            return scr
+        else: 
+            pass
+    return scr
 
 # Display recommended movies
 def display_movie(recommended):
     for movie in recommended:
         movie_url = data.loc[data['title']==movie, 'link'].values[0]
         st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
-        st.markdown(display_circular_image('https://illustoon.com/photo/7627.png'), unsafe_allow_html=True)
+        st.markdown(display_circular_image(img_getter(movie_url)), unsafe_allow_html=True)
         st.markdown(f"""<h2 style='font-family:Courier;'><u>{movie}</u>&emsp;({int(data.loc[data['title']==movie, 'year'].values[0])})</h2>""", unsafe_allow_html=True)
         st.markdown(f"""<p style="font-size: 16px; color: red;"><b>{data.loc[data['title']==movie, 'genre'].values[0]}</b></p>""", unsafe_allow_html=True)
         st.markdown(f"""<p style="font-size: 16px;"><b>Director:</b> {data.loc[data['title']==movie, 'director'].values[0]}&emsp;&emsp;<b>Stars:</b> {data.loc[data['title']==movie, 'stars'].values[0]}</p>""", unsafe_allow_html=True)
