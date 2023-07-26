@@ -66,7 +66,8 @@ def img_getter(url:str):
             image_source = image_tag['src']
             return image_source
         else:
-            return 'https://illustoon.com/photo/7627.png'
+            scr = 'https://illustoon.com/photo/7627.png'
+            return scr
 
 # Display recommended movies
 def display_movie(recommended):
