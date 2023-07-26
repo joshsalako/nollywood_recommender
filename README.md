@@ -16,15 +16,15 @@ Our recommendation engine will work its magic and present you with a handpicked 
 
 ## Get Started
 
-🚀 **[Launch the Nollywood Movie Recommender](https://www.example.com/nollywood-movie-recommender)** 🚀
+🚀 **[Launch the Nollywood Movie Recommender]([https://www.example.com/nollywood-movie-recommender](https://nollywoodrecommender.streamlit.app/))** 🚀
 
-Click the link above to start exploring a world of Nollywood entertainment! Whether you're into action-packed adventures, heartwarming romances, thrilling sci-fi mysteries, or pulse-pounding action thrillers, we've got something special for you! 🎉
+Click the link above to start exploring the world of Nollywood entertainment! Whether you're into action-packed adventures, heartwarming romances, thrilling sci-fi mysteries, or pulse-pounding action thrillers, we've got something special for you! 🎉
 
 ## About
 
 The Nollywood Movie Recommender is a fun project that uses a recommendation model to provide personalized movie suggestions to Nollywood fans. The app is built with Streamlit, a user-friendly Python library for creating interactive web applications.
 
-Explore and enjoy the best of Nollywood with our movie recommender app! 🍿🎬 Happy movie watching! 🍿🎬
+Explore and enjoy the best of Nollywood with our movie recommender app! 🍿🎬 Happy movie-watching! 🍿🎬
 
 ---
 
