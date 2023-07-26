@@ -5,3 +5,4 @@ requests==2.25.1
 scikit_learn==1.3.0
 streamlit==1.13.0
 streamlit_lottie==0.0.3
+html5lib==1.1
