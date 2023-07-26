@@ -16,7 +16,7 @@ Our recommendation engine will work its magic and present you with a handpicked 
 
 ## Get Started
 
-🚀 **[Launch the Nollywood Movie Recommender]([https://www.example.com/nollywood-movie-recommender](https://nollywoodrecommender.streamlit.app/))** 🚀
+🚀 **[Launch the Nollywood Movie Recommender](https://nollywoodrecommender.streamlit.app/)** 🚀
 
 Click the link above to start exploring the world of Nollywood entertainment! Whether you're into action-packed adventures, heartwarming romances, thrilling sci-fi mysteries, or pulse-pounding action thrillers, we've got something special for you! 🎉
 
