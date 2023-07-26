@@ -116,7 +116,11 @@ def display_circular_image(image_url):
 def main():
     st.markdown("<h1 style='font-family:Courier; text-align: center; color: red;'>🎬 Nollywood Movie Recommender 🍿</h1>", unsafe_allow_html=True)
     #st.title("🎬 Nollywood Movie Recommender 🍿")
-
+    st.markdown("""
+    * [Dataset](https://www.kaggle.com/datasets/joshsalako/nollywood-movies-collection?trk=feed_main-feed-card_feed-article-content)
+    * [Source](https://github.com/joshsalako/nollywood_recommender/)
+    * [Contact me](mailto:salakojoshua1234@gmail.com)
+    """)
     # Short description of the app
     st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
     st.markdown("""<p style="font-size: 16px;">
