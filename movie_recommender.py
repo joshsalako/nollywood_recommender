@@ -71,11 +71,14 @@ def img_getter(url:str):
     return scr
 
 # Display recommended movies
-def display_movie(recommended):
-    st.success(f"Random movie recommendation:")
+def display_movie(recommended, random=False):
     if not np.any(recommended):
         st.error('There are no movies of the genre you selected...')
     else:
+        if not random:
+            st.success(f"Random movie recommendation:")
+        else:
+            st.success(f"Here are some movie recommendation:")
         for movie in recommended:
             movie_url = data.loc[data['title']==movie, 'link'].values[0]
             st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
