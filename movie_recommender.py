@@ -75,7 +75,7 @@ def display_movie(recommended, random=False):
     if recommended.size==0:
         st.error('There are no movies of the genre you selected...')
     else:
-        if not random:
+        if random:
             st.success(f"Random movie recommendation:")
         else:
             st.success(f"Here are some movie recommendation:")
