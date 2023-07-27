@@ -9,7 +9,7 @@ from streamlit_lottie import st_lottie_spinner
 from bs4 import BeautifulSoup
 from requests import get
 
-st. set_page_config(layout="wide")
+#st. set_page_config(layout="wide")
 _ = open("loader.json")
 st_lottie_html = json.load(_)
 
@@ -131,7 +131,7 @@ def main():
     st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
 
     # Sidebar for user input
-    st.markdown("""<p style="font-size: 14px;"><>bUser Input: </b></p>""", unsafe_allow_html=True)
+    st.markdown("""<p style="font-size: 14px;"><b>User Input: </b></p>""", unsafe_allow_html=True)
 
     # Movie selection
     selected_movie = st.selectbox("Select a movie you liked:", movies)
