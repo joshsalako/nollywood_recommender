@@ -116,30 +116,30 @@ def display_circular_image(image_url):
 def main():
     st.markdown("<h1 style='font-family:Courier; text-align: center; color: red;'>🎬 Nollywood Movie Recommender 🍿</h1>", unsafe_allow_html=True)
     #st.title("🎬 Nollywood Movie Recommender 🍿")
-    st.markdown("""
+    st.sidebar.markdown("""
     * [Dataset](https://www.kaggle.com/datasets/joshsalako/nollywood-movies-collection?trk=feed_main-feed-card_feed-article-content)
     * [Source](https://github.com/joshsalako/nollywood_recommender/)
     * [Contact me](mailto:salakojoshua1234@gmail.com)
     """)
     # Short description of the app
     st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
-    st.markdown("""<p style="font-size: 16px;">
-    Welcome to the Nollywood Movie Recommender! 🚀</p>
-    <p style="font-size: 16px;"> Select a movie you liked, set your preferences, and get personalized recommendations!
+    st.markdown("""<p style="font-size: 16px;"><b>
+    Welcome to the Nollywood Movie Recommender! 🚀</b></p>
+    <p style="font-size: 14px;"> Select a movie you liked, set your preferences, and get personalized recommendations!
     Discover new Nollywood gems with our movie recommender! 💎
     </p>""", unsafe_allow_html=True)
     st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
 
     # Sidebar for user input
-    st.sidebar.title("User Input")
+    st.markdown("""<p style="font-size: 14px;"><>bUser Input: </b></p>""", unsafe_allow_html=True)
 
     # Movie selection
-    selected_movie = st.sidebar.selectbox("Select a movie you liked:", movies)
+    selected_movie = st.selectbox("Select a movie you liked:", movies)
 
     # Genre selection
     genres = data['genre'].unique().tolist()
     genres_unique =sorted(set([words for segments in genres for words in segments.split(', ')]))
-    selected_genre = st.sidebar.selectbox("Select a specific genre:", genres_unique)
+    selected_genre = st.selectbox("Select a specific genre:", genres_unique)
 
     # Rating selection
     #selected_rating = st.sidebar.slider("Select minimum rating:", 0.0, 5.0, 2.0, 0.1)
@@ -148,7 +148,7 @@ def main():
     #selected_votes = st.sidebar.slider("Select minimum votes:", 0, 100, 25)
 
     # Button to trigger movie recommendations
-    if st.sidebar.button("Get Recommendations"):
+    if st.button("Get Recommendations"):
         # Show loading animation
         with st_lottie_spinner(st_lottie_html):
             time.sleep(2)
@@ -159,9 +159,9 @@ def main():
             # Show the recommendations
             st.success("Here are some movie recommendations:")
             display_movie(recommended_movies)
-    st.sidebar.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
+    st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
 
-    if st.sidebar.button("🎲 Get Random Movie"):
+    if st.button("🎲 Get Random Movie"):
         # Show loading animation
         with st_lottie_spinner(st_lottie_html):
             time.sleep(2)
