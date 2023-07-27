@@ -173,7 +173,7 @@ def main():
             time.sleep(2)
             # Get a random movie recommendation
             random_movie = np.random.choice(movies, size=1, replace=False)
-            display_movierandom_movie, random=True)
+            display_movie(random_movie, random=True)
 
 if __name__ == "__main__":
     main()
