@@ -72,16 +72,20 @@ def img_getter(url:str):
 
 # Display recommended movies
 def display_movie(recommended):
-    for movie in recommended:
-        movie_url = data.loc[data['title']==movie, 'link'].values[0]
-        st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
-        st.markdown(display_circular_image(img_getter(movie_url)), unsafe_allow_html=True)
-        st.markdown(f"""<h2 style='font-family:Courier;'><u>{movie}</u>&emsp;({int(data.loc[data['title']==movie, 'year'].values[0])})</h2>""", unsafe_allow_html=True)
-        st.markdown(f"""<p style="font-size: 16px; color: red;"><b>{data.loc[data['title']==movie, 'genre'].values[0]}</b></p>""", unsafe_allow_html=True)
-        st.markdown(f"""<p style="font-size: 16px;"><b>Director:</b> {data.loc[data['title']==movie, 'director'].values[0]}&emsp;&emsp;<b>Stars:</b> {data.loc[data['title']==movie, 'stars'].values[0]}</p>""", unsafe_allow_html=True)
-        st.markdown(f"""<p style="font-size: 14px;">{data.loc[data['title']==movie, 'show_desc'].values[0]}</p>""", unsafe_allow_html=True)
-        st.markdown(f"""[See more about this movie...]({movie_url})""", unsafe_allow_html=True)
-        st.markdown('---')
+    st.success(f"Random movie recommendation:")
+    if not np.any(recommended):
+        st.error('There are no movies of the genre you selected...')
+    else:
+        for movie in recommended:
+            movie_url = data.loc[data['title']==movie, 'link'].values[0]
+            st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
+            st.markdown(display_circular_image(img_getter(movie_url)), unsafe_allow_html=True)
+            st.markdown(f"""<h2 style='font-family:Courier;'><u>{movie}</u>&emsp;({int(data.loc[data['title']==movie, 'year'].values[0])})</h2>""", unsafe_allow_html=True)
+            st.markdown(f"""<p style="font-size: 16px; color: red;"><b>{data.loc[data['title']==movie, 'genre'].values[0]}</b></p>""", unsafe_allow_html=True)
+            st.markdown(f"""<p style="font-size: 16px;"><b>Director:</b> <u>{data.loc[data['title']==movie, 'director'].values[0]}</u>&emsp;&emsp;<b>Stars:</b><u> {data.loc[data['title']==movie, 'stars'].values[0]}</u></p>""", unsafe_allow_html=True)
+            st.markdown(f"""<p style="font-size: 14px;">{data.loc[data['title']==movie, 'show_desc'].values[0]}</p>""", unsafe_allow_html=True)
+            st.markdown(f"""[See more about this movie...]({movie_url})""", unsafe_allow_html=True)
+            st.markdown('---')
 
 def get_movie_recommendations(title, genre, cosine_sim=cosine_sim, indices=indices):
     # Get index of movie that matches title
@@ -157,7 +161,6 @@ def main():
             recommended_movies = get_movie_recommendations(selected_movie, selected_genre)
 
             # Show the recommendations
-            st.success("Here are some movie recommendations:")
             display_movie(recommended_movies)
     st.markdown("""<p>&nbsp</p>""", unsafe_allow_html=True)
 
@@ -167,7 +170,6 @@ def main():
             time.sleep(2)
             # Get a random movie recommendation
             random_movie = np.random.choice(movies, size=1, replace=False)
-            st.success(f"Random movie recommendation:")
             display_movie(random_movie)
 
 if __name__ == "__main__":
