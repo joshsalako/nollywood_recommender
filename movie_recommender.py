@@ -72,7 +72,7 @@ def img_getter(url:str):
 
 # Display recommended movies
 def display_movie(recommended, random=False):
-    if recommended.size==0:
+    if (np.array(recommended)).size==0:
         st.error('There are no movies of the genre you selected...')
     else:
         if random:
