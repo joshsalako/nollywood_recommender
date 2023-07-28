@@ -97,7 +97,7 @@ def get_movie_recommendations(title, genre, cosine_sim=cosine_sim, indices=indic
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     # Get the scores for 10 most similar movies
-    sim_scores = sim_scores[1:11]
+    sim_scores = sim_scores[1:7]
     # Get the movie indices
     movie_indices = [i[0] for i in sim_scores]
     # Return the top 10 most similar movies
