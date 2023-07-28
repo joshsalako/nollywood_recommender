@@ -24,7 +24,7 @@ def cos_gen():
     data['stars_'] = data['stars_'].str.replace(',', ', ')
     data['director_'] = data['director'].str.replace(' ', '')
     data['director_'] = data['director_'].str.replace(',', ', ')
-    data['text'] = data['genre']+ str(' ') + data['show_desc_']+ str(' ') + data['stars_']+ str(' ') + data['director_']
+    data['text'] = data['genre'].str.replace(',', '') + str(' ') + data['show_desc_']+ str(' ') + data['stars_']+ str(' ') + data['director_']
     data.reset_index(inplace=True)
     # Import TfidfVectorizer
     from sklearn.feature_extraction.text import TfidfVectorizer
